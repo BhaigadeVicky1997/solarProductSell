@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="end" (click)="logOut()">
+      <ion-button>
+        <ion-icon style="font-size: 30px;" slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+  <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+          <ion-slide>
+            <img src="../../../assets/homeimgclient.jpg">
+            <!-- <span class="slide-text">Slide id {{s.id}}</span> -->
+          </ion-slide>
+          <ion-slide>
+            <img src="../../../assets/thomeacces.jpg">
+            <!-- <span class="slide-text">Slide id {{s.id}}</span> -->
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <div>
+          <h3>Reccomended Services</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngFor="let i of todos">
+          <ion-card-header>
+            <ion-card-title>{{i.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{i.description}}
+          </ion-card-content>
+        </ion-card>
+        <h5 class="ion-text-end" routerLink="/services">See All</h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <div>
+          <h3>What We Do</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid style="padding: 20px;">
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+
+        <h3>Flexibility</h3>
+        <div style="font-size: 18px;" class="box">
+          Services tailored to your needs, According to your timelines.
+        </div>
+        <br />
+        <h3>Simplicity</h3>
+        <div style="font-size: 18px;">
+          Solutions built for problems of various complexities.
+        </div>
+        <br />
+        <h3>Clarity</h3>
+        <div style="font-size: 18px;">
+          Solutions at most transparency.
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

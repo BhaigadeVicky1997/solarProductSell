@@ -1,0 +1,39 @@
+
+<ion-content><ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Services</ion-title>
+    <ion-buttons slot="end" (click)="logOut()">
+      <ion-button>
+        <ion-icon style="font-size: 30px;" slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid style="margin-bottom: 50px;">
+    <ion-row>
+      <ion-col size="12" *ngFor="let i of service">
+        <ion-card>
+          <img src="{{i.data().serviceimage}}" alt="ion">
+          <ion-card-header>
+            <ion-card-title>{{i.data().name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content text-wrap>
+            {{i.data().description}}
+          </ion-card-content>
+     
+          <ion-item class="ion-activated">
+            <img src="../../../assets/rupee-indian.png" width="20px" alt="">
+            <ion-label><h1>{{i.data().price}}</h1></ion-label>
+            <ion-button size="default" expand="full" color="danger" (click)="payWithRazor(i.data().price)">Buy Now</ion-button>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+</ion-content>
